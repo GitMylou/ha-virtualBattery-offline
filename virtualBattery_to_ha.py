@@ -201,14 +201,13 @@ for injectionData, consumptionData in zip(injectionDataList, consumptionDataList
         print("Battery Stock after consumption: ", previousBatteryStock)
 
     statsBatteryStockList.append({"start" : str(injectionDate.strftime('%Y-%m-%d %H:%M:%S')+GMT),
-                                  "state" : previousBatteryStock})
+                                  "state" : previousBatteryStock / 1000})
 
     statsBatteryOutList.append({"start" : str(injectionDate.strftime('%Y-%m-%d %H:%M:%S')+GMT),
                                 "sum" : previousBatteryOut})
     
     statsEnedisOutList.append({"start" : str(injectionDate.strftime('%Y-%m-%d %H:%M:%S')+GMT),
                                "sum" : previousEnedisOut})
-
 
 print()
 print("Push data to HA")
